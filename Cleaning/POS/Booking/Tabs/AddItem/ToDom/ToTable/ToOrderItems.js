@@ -36,7 +36,6 @@ let ShowOnDom = ({ inJsonData }) => {
 
     Object.entries(jVarLocaljVarLocalItemsInOrderJson).forEach(
         ([key, element]) => {
-            console.log("aaaaaa : ", key);
             jFLocalItemsInsertRowFromTemplate({
                 inRowPk: key,
                 inTableBodyId: jVarLocalHtmlTableBody,
@@ -64,7 +63,7 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
     // let jVarLocalAddOnData = StartFuncFromAddOns({ inItemSerial: inRowPk });
     // console.log("jVarLocalAddOnData : ", jVarLocalAddOnData);
     const clone = jVarLocalTemplateForOrderItemsTableRow.content.cloneNode(true);
-
+    console.log("clone : ", clone);
     let jVarLocalOrderItemsSerialButtonClass = clone.querySelector(".OrderItemsSerialButtonClass");
     jVarLocalOrderItemsSerialButtonClass.value = inRowPk;
     // jVarLocalOrderItemsSerialButtonClass.addEventListener("click", jFLocalItemSerialButtonClickFunc);

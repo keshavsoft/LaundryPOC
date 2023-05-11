@@ -11,7 +11,7 @@ let StartFunc = () => {
 let jFLocalButtonClick = () => {
     let jVarLocalItemSerial = jFLocalPrepareData();
 
-    StartFuncToOrderItems();
+    // StartFuncToOrderItems();
     StartFuncToAddOns({ inItemSerial: jVarLocalItemSerial });
 };
 
@@ -43,32 +43,6 @@ let jFLocalPrepareData = () => {
     });
 
     return jVarLocaljVarLocalAddOnItemIdValue;
-};
-
-let jFLocalToLocalStorage = ({ inObjectToInsert }) => {
-    try {
-        let jVarLocalStorageKey = "AddOnData";
-
-        let jVarObjectToInsert = inObjectToInsert;
-
-        let jVLocalFromLocalStorate = localStorage.getItem(jVarLocalStorageKey);
-        let jVarLocalOrderItems = JSON.parse(jVLocalFromLocalStorate);
-        let jVarLocalKeys = Object.keys(jVarLocalOrderItems);
-        let jVarLocalNewKey = 1;
-
-        if (jVarLocalKeys.length > 0) {
-            const max = Math.max(...jVarLocalKeys);
-
-            jVarLocalNewKey = max + 1;
-        }
-
-        jVarLocalOrderItems[jVarLocalNewKey] = jVarObjectToInsert;
-        //  jVarLocalItemsArray.push(jVarObjectToInsert);
-
-        localStorage.setItem(jVarLocalStorageKey, JSON.stringify(jVarLocalOrderItems));
-    } catch (error) {
-        console.log("error : ", error);
-    };
 };
 
 export { StartFunc };
