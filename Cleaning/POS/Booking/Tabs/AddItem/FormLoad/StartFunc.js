@@ -6,12 +6,14 @@ import { StartFunc as StartFuncToItemAddTemplateRow } from "./ToDom/ToItemAddTem
 
 let StartFunc = () => {
     StartFuncToLocalStorageFuncs();
+
     StartFuncAddToDom();
 
     jFShowDeliveryDateTime();
 
     StartFuncAddFrequent();
     StartFuncToItemAddTemplateRow();
+
 };
 
 const jFShowDeliveryDateTime = () => {
@@ -19,7 +21,7 @@ const jFShowDeliveryDateTime = () => {
     let jVarLocalMenItemsTabId = document.getElementById(jVarLocalHtmlId);
     let jVarLocalDeliveryDateTimeClass = jVarLocalMenItemsTabId.querySelector(".DeliveryDateTimeClass");
     let jVarLocalToShowValue = jFLocalCurrentDateTime();
-    
+
     jVarLocalDeliveryDateTimeClass.value = jVarLocalToShowValue;
 };
 

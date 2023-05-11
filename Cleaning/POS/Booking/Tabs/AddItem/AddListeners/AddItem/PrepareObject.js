@@ -15,7 +15,6 @@ let jFLocalPrepareObject = ({ inTabPane }) => {
         let jVarLocalCategory = jVarClosestTabPane.dataset.category;
         let jVarLocalItemSelect = jFLocalItemSelect({ inTabPane });
 
-
         let localItemSelect = selectItemByValue({ inHtmlSelect: jVarLocalItemSelect.ItemSerialID });
         let localWashSelect = selectItemByValue({ inHtmlSelect: jVarLocalWashType });
         let localPcs = jFLocalFromDomAsInt({ inHtmlId: jVarLocalPcs });
@@ -49,11 +48,17 @@ let jFLocalPrepareObject = ({ inTabPane }) => {
 
 let jFLocalItemSerialClass = ({ inTabPane }) => {
     try {
-        let jVarClosestTabPane = inTabPane;
-        let jVarLocalItemSerialClass = jVarClosestTabPane.querySelector(".ItemSerialClass");
+        // let jVarClosestTabPane = inTabPane;
+        let jVarLocalItemsTableBodyId = document.getElementById("ItemsTableBodyId");
+
+        // let jVarLocalItemSerialClass = jVarClosestTabPane.querySelector(".ItemSerialClass");
+
+        // let localReturnObject = {
+        //     ItemSerial: jVarLocalItemSerialClass.value
+        // };
 
         let localReturnObject = {
-            ItemSerial: jVarLocalItemSerialClass.value
+            ItemSerial: jVarLocalItemsTableBodyId.rows.length + 1
         };
 
         return localReturnObject;
