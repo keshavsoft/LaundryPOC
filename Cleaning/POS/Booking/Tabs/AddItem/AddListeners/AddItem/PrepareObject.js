@@ -60,7 +60,7 @@ let jFLocalItemSerialClass = ({ inTabPane }) => {
         let localReturnObject = {
             ItemSerial: jVarLocalItemsTableBodyId.rows.length + 1
         };
-
+        
         return localReturnObject;
     } catch (error) {
         console.log("error : ", error);

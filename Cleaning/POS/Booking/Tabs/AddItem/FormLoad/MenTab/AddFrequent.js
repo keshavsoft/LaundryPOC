@@ -9,11 +9,6 @@ const StartFunc = () => {
         inData: jVarLocalFromLocalStorage,
         inHtmlId: "MenFrequentItems"
     });
-
-    // jFMenTab({
-    //     inLocalStorateKey: "WomenItems",
-    //     inHtmlId: "WomenFrequentItems"
-    // });
 };
 
 const jFMenTab = ({ inData, inHtmlId }) => {

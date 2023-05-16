@@ -1,6 +1,5 @@
 import { StartFunc as StartFuncToDom } from "../../ToDom/ToTable/ToOrderItems.js";
 import { StartFunc as StartFuncPrepareObject } from "./PrepareObject.js";
-import { StartFunc as StartFuncToOrderItemsHtml } from "../../ToLocalStorage/PrepareForOrderItemsTable.js";
 
 let StartFuncs = () => {
     jFLocalMenTab();
@@ -25,7 +24,7 @@ let localAddItemButtonFunc = (event) => {
         let jVarObjectToInsert = StartFuncPrepareObject({ inTabPane: jVarClosestTabPane });
         jFLocalToLocalStorage({ inObjectToInsert: jVarObjectToInsert });
 
-        StartFuncToOrderItemsHtml();
+        // StartFuncToOrderItemsHtml();
         StartFuncToDom();
 
         jFLocalPostItemInsertFunc({ inTabPane: jVarClosestTabPane });
@@ -38,13 +37,14 @@ let localAddItemButtonFunc = (event) => {
 const jFLocalPostItemInsertFunc = ({ inTabPane }) => {
     let jVarLocalItemSerialClass = inTabPane.querySelector(".ItemSerialClass");
     let jVarLocalItemsTableBodyId = document.getElementById("ItemsTableBodyId");
-    let jVarLocalItemsShowCollapseId = document.getElementById("ItemsShowCollapseId");
+    
     let jVarLocalAddOnItemId = document.getElementById("AddOnItemId");
     // AddOnMenuId
 
-    let jVarLocalBSItemsShowCollapseId = bootstrap.Collapse.getOrCreateInstance(jVarLocalItemsShowCollapseId);
+    // let jVarLocalItemsShowCollapseId = document.getElementById("ItemsShowCollapseId");
+    // let jVarLocalBSItemsShowCollapseId = bootstrap.Collapse.getOrCreateInstance(jVarLocalItemsShowCollapseId);
+    // jVarLocalBSItemsShowCollapseId.show();
 
-    jVarLocalBSItemsShowCollapseId.show();
     let jVarLocalOrderItemsTableRowCount = jVarLocalItemsTableBodyId.rows;
     jVarLocalItemSerialClass.value = jVarLocalOrderItemsTableRowCount.length + 1;
 
