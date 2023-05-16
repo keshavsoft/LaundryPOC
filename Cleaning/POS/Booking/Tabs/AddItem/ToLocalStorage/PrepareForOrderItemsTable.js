@@ -18,16 +18,24 @@ let LocalFuncClubData = () => {
 
 let LocalFuncClubAddOnData = ({ inItemData }) => {
     let jVarLocalAddOnData = StartFuncFromAddOnsAll();
-
+    
     Object.entries(inItemData).forEach(
         ([key, value]) => {
-            value.Total = 16;
+            value.Total = value.Rate;
 
             let jVarLocalFilered = jFLocalFilterData({
                 inData: jVarLocalAddOnData,
                 inItemSerial: value.ItemSerial
             });
-            console.log("jVarLocalFilered : ", jVarLocalFilered, value.ItemSerial);
+
+            if (jVarLocalFilered.length > 0) {
+                let jVarLocalAddOnRateArray = jVarLocalFilered.map(element => {
+                    return element.AddOnRate;
+                });
+
+                const sum = jVarLocalAddOnRateArray.reduce((a, b) => a + b, 0);
+                value.Total = value.Rate + sum;
+            };
         }
     );
 };

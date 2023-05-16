@@ -13,6 +13,8 @@ let jFLocalButtonClick = () => {
 
     // StartFuncToOrderItems();
     StartFuncToAddOns({ inItemSerial: jVarLocalItemSerial });
+    StartFuncToOrderItems();
+
 };
 
 let jFLocalPrepareData = () => {
@@ -27,18 +29,10 @@ let jFLocalPrepareData = () => {
 
     var jVarLocalAddOnServiceIdtext = jVarLocalAddOnServiceId.options[jVarLocalAddOnServiceId.selectedIndex].text;
 
-    // let jVarObjectToInsert = {
-    //     AddOnService: jVarLocalAddOnServiceIdtext,
-    //     AddOnRate: parseInt(jVarLocalAddOnRateIdValue),
-    //     AddOnItemSerial: jVarLocaljVarLocalAddOnItemIdValue,
-    //     AddOnImageSerial: jVarLocaljVarLocalAddOnImageIdValue
-    // };
-
-    // jFLocalToLocalStorage({ inObjectToInsert: jVarObjectToInsert });
     StartFuncToLocalStorage({
         inAddOnService: jVarLocalAddOnServiceIdtext,
         inAddOnRate: parseInt(jVarLocalAddOnRateIdValue),
-        inAddOnItemSerial: jVarLocaljVarLocalAddOnItemIdValue,
+        inAddOnItemSerial: parseInt(jVarLocaljVarLocalAddOnItemIdValue),
         inAddOnImageSerial: jVarLocaljVarLocalAddOnImageIdValue
     });
 
