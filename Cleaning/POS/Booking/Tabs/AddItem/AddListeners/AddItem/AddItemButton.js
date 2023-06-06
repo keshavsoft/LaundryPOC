@@ -22,6 +22,8 @@ let localAddItemButtonFunc = (event) => {
         let jVarClosestTabPane = jVarLocalCurrentTarget.closest(".tab-pane");
 
         let jVarObjectToInsert = StartFuncPrepareObject({ inTabPane: jVarClosestTabPane });
+        console.log("aaaaaaa : ", jVarObjectToInsert);
+
         jFLocalToLocalStorage({ inObjectToInsert: jVarObjectToInsert });
 
         // StartFuncToOrderItemsHtml();
@@ -37,7 +39,7 @@ let localAddItemButtonFunc = (event) => {
 const jFLocalPostItemInsertFunc = ({ inTabPane }) => {
     let jVarLocalItemSerialClass = inTabPane.querySelector(".ItemSerialClass");
     let jVarLocalItemsTableBodyId = document.getElementById("ItemsTableBodyId");
-    
+
     let jVarLocalAddOnItemId = document.getElementById("AddOnItemId");
     // AddOnMenuId
 
