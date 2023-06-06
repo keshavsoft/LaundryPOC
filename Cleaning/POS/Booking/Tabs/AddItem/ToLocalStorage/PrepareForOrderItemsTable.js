@@ -18,10 +18,10 @@ let LocalFuncClubData = () => {
 
 let LocalFuncClubAddOnData = ({ inItemData }) => {
     let jVarLocalAddOnData = StartFuncFromAddOnsAll();
-    
+
     Object.entries(inItemData).forEach(
         ([key, value]) => {
-            value.Total = value.Rate;
+            value.Total = value.Rate * value.Pcs;
 
             let jVarLocalFilered = jFLocalFilterData({
                 inData: jVarLocalAddOnData,
