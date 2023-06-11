@@ -1,6 +1,13 @@
-const StartFunc = (params) => {
+import { StartFunc as StartFuncMenuIdChange } from "./MenuIdChange.js";
+import { StartFunc as StartFuncAddOnMenuIdChange } from "./AddOnMenuIdChange.js";
+
+const StartFunc = () => {
+    StartFuncMenuIdChange();
+    StartFuncAddOnMenuIdChange();
+};
+
+const StartFunc_Keshav12Jun2023 = () => {
     let jVarLocalMenuId = document.getElementById("MenuId");
-    let jVarLocalMainContentTabId = document.getElementById("MainContentTabId")
     let jVarLocalMenuTabId = document.getElementById("MenuTabId");
     let jVarLocalAddOnMenuId = document.getElementById("AddOnMenuId");
     let jVarLocalMenuTabAddOnId = document.getElementById("MenuTabAddOnId");
