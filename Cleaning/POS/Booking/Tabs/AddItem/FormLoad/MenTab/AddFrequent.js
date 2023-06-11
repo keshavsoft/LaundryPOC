@@ -1,4 +1,3 @@
-// import { StartFunc as StartFuncAddListeners } from "../AddListeners/FrequentItems/ButtonClickFuncs.js";
 import { StartFunc as StartFuncAddListeners } from "../../AddListeners/FrequentItems/ButtonClickFuncs.js";
 import { StartFunc as StartFuncFromLocalStorage } from "../../FromLocalStorage/Items.js";
 
@@ -71,6 +70,7 @@ const jFLocalCreateButton = ({ inItemName, inItemRate }) => {
     jVarLocalButton.value = jVarLocalItemName;
     jVarLocalButton.className = "btn btn-primary";
     jVarLocalButton.dataset.rate = inItemRate;
+    jVarLocalButton.setAttribute("tabindex", -1);
 
     jVarLocalButton.addEventListener("click", StartFuncAddListeners);
 

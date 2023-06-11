@@ -2,7 +2,7 @@ import { StartFunc as StartFuncFromAddOns } from "../../../FromLocalStorage/From
 
 let StartFunc = ({ inItemSerial, inClonedTemplateRow }) => {
     let jVarLocalAddOnDataJson = StartFuncFromAddOns({ inItemSerial });
-
+    console.log("aaaaaaaaaaa : ", jVarLocalAddOnDataJson);
     let jVarLocalOrderItemsOrderItemsAddOnClass = inClonedTemplateRow.querySelector(".OrderItemsAddOnClass");
 
     let jVarLocalAddOnRateArray = jVarLocalAddOnDataJson.map(element => element.AddOnRate);

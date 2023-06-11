@@ -22,7 +22,7 @@ let StartFunc = () => {
 };
 
 let jFClearDom = () => {
-    let jVarLocalItemsTableBodyId = "ItemsTableBodyId";
+    let jVarLocalItemsTableBodyId = jVarCommonTableBodyId;
     var jVarLocalHtmlTableBody = document.getElementById(jVarLocalItemsTableBodyId);
 
     jVarLocalHtmlTableBody.innerHTML = "";
@@ -37,7 +37,7 @@ let ShowOnDom = ({ inJsonData }) => {
     Object.entries(jVarLocaljVarLocalItemsInOrderJson).forEach(
         ([key, element]) => {
             jFLocalItemsInsertRowFromTemplate({
-                inRowPk: key,
+                inRowPk: parseInt(key),
                 inTableBodyId: jVarLocalHtmlTableBody,
                 inCategory: element.Category,
                 inItemName: element.ItemName,
@@ -66,13 +66,11 @@ let ShowOnDom = ({ inJsonData }) => {
 let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, inItemName, inItemNamePk, inWashType, inWashTypePk, inPcs, inItemRate, inAddOn, inTotal, inlocation, inlocationPk, inDeliveryDateTime }) => {
     var table = inTableBodyId;
     let jVarLocalTemplateForOrderItemsTableRow = document.getElementById("TemplateForOrderItemsTableRow");
-    // let jVarLocalAddOnData = StartFuncFromAddOns({ inItemSerial: inRowPk });
-    // console.log("jVarLocalAddOnData : ", jVarLocalAddOnData);
+
     const clone = jVarLocalTemplateForOrderItemsTableRow.content.cloneNode(true);
-    console.log("clone : ", clone);
+
     let jVarLocalOrderItemsSerialButtonClass = clone.querySelector(".OrderItemsSerialButtonClass");
     jVarLocalOrderItemsSerialButtonClass.value = inRowPk;
-    // jVarLocalOrderItemsSerialButtonClass.addEventListener("click", jFLocalItemSerialButtonClickFunc);
 
     jVarLocalOrderItemsSerialButtonClass.addEventListener("click", StartFuncToItemSerialButton);
 
@@ -93,9 +91,6 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
     let jVarLocalOrderItemsOrderItemsItemWashClass = clone.querySelector(".OrderItemsItemWashClass");
     jVarLocalOrderItemsOrderItemsItemWashClass.dataset.pk = inWashTypePk;
     jVarLocalOrderItemsOrderItemsItemWashClass.innerHTML = inWashType;
-
-    // let jVarLocalOrderItemsOrderItemsAddOnClass = clone.querySelector(".OrderItemsAddOnClass");
-    // jVarLocalOrderItemsOrderItemsAddOnClass.innerHTML = inAddOn;
 
     let jVarLocalOrderItemsOrderItemsItemPcsClass = clone.querySelector(".OrderItemsItemPcsClass");
     jVarLocalOrderItemsOrderItemsItemPcsClass.innerHTML = inPcs;
