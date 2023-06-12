@@ -1,5 +1,5 @@
 import { StartFunc as StartFuncToRow } from "./ToRow/ToOrderItems.js";
-import { StartFunc as StartFuncToItemSerialButton } from "./AddListenersRunTime/ToItemSerialButton.js";
+
 import { StartFunc as StartFuncShowTotals } from "./ToFooter/ShowTotals.js";
 import { StartFunc as StartFuncToFactories } from "./ToRow/ToFactories.js";
 import { StartFunc as StartFuncToDeliveryDateTime } from "./ToRow/ToDeliveryDateTime.js";
@@ -69,14 +69,6 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
 
     const clone = jVarLocalTemplateForOrderItemsTableRow.content.cloneNode(true);
 
-    let jVarLocalOrderItemsSerialButtonClass = clone.querySelector(".OrderItemsSerialButtonClass");
-    jVarLocalOrderItemsSerialButtonClass.value = inRowPk;
-
-    jVarLocalOrderItemsSerialButtonClass.addEventListener("click", StartFuncToItemSerialButton);
-
-    let jVarLocalOrderItemsEditButtonClass = clone.querySelector(".OrderItemsEditButtonClass");
-    jVarLocalOrderItemsEditButtonClass.value = inRowPk;
-    jVarLocalOrderItemsEditButtonClass.addEventListener("click", StartFuncToItemSerialButton);
 
     let jVarLocalOrderItemsCategoryClass = clone.querySelector(".OrderItemsCategoryClass");
     jVarLocalOrderItemsCategoryClass.innerHTML = inCategory;
@@ -92,38 +84,16 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
     jVarLocalOrderItemsOrderItemsItemWashClass.dataset.pk = inWashTypePk;
     jVarLocalOrderItemsOrderItemsItemWashClass.innerHTML = inWashType;
 
-    let jVarLocalOrderItemsOrderItemsItemPcsClass = clone.querySelector(".OrderItemsItemPcsClass");
-    jVarLocalOrderItemsOrderItemsItemPcsClass.innerHTML = inPcs;
-
     let jVarLocalOrderItemsOrderItemsTotalClass = clone.querySelector(".OrderItemsTotalClass");
     jVarLocalOrderItemsOrderItemsTotalClass.innerHTML = inTotal;
-
-    let jVarLocalOrderItemsOrderItemsDeleteButtonClass = clone.querySelector(".OrderItemsDeleteButtonClass");
-    jVarLocalOrderItemsOrderItemsDeleteButtonClass.addEventListener("click", jFLocalItemDeleteButtonClickFunc)
-
-    let jVarLocalOrderItemsOrderItemsEditButtonClass = clone.querySelector(".OrderItemsEditButtonClass");
-    jVarLocalOrderItemsOrderItemsEditButtonClass.addEventListener("click", jFLocalItemEditButtonClickFunc);
 
     StartFuncToFactories({ inlocation, inlocationPk, inClonedTemplateRow: clone });
     StartFuncToDeliveryDateTime({ inDeliveryDateTime, inClonedTemplateRow: clone });
 
-    StartFuncToRow({ inItemSerial: inRowPk, inClonedTemplateRow: clone });
+    StartFuncToRow({ inItemSerial: inRowPk, inClonedTemplateRow: clone, inPcs });
 
     table.appendChild(clone);
 };
 
-const jFLocalItemDeleteButtonClickFunc = (event) => {
-    let jVarLocalEvent = event;
-    let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
-    console.log("Delete", jVarLocalCurrentTarget);
-
-};
-
-const jFLocalItemEditButtonClickFunc = (event) => {
-    let jVarLocalEvent = event;
-    let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
-    console.log("Edit", jVarLocalCurrentTarget);
-
-};
 
 export { StartFunc };

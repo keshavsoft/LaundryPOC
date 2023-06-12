@@ -8,14 +8,13 @@ let jFLocalItemSerialButtonClickFunc = (event) => {
     let jVarLocalEvent = event;
     let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
     let jVarLocalClosestTr = jVarLocalCurrentTarget.closest("tr");
-    let jVarLocalRowSelected = jVarLocalCurrentTarget.value;
+    let jVarLocalRowSelected = jVarLocalCurrentTarget.dataset.itemserial;
 
     let jVarLocalDataFromrow = jFLocalFromRowTable({ inJVarClosestTr: jVarLocalClosestTr });
 
     jFLocalShowOnAbove({ inDataToShow: jVarLocalDataFromrow, inRowSelected: jVarLocalRowSelected });
 
     StartFuncToAddOns({ inItemSerial: jVarLocalRowSelected });
-
 };
 
 let jFLocalShowOnAbove = ({ inDataToShow, inRowSelected }) => {
