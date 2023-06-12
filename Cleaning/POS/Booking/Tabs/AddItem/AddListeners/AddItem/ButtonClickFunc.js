@@ -1,19 +1,26 @@
 import { StartFunc as StartFuncToDom } from "../../ToDom/ToTable/ToOrderItems.js";
 import { StartFunc as StartFuncPrepareObject } from "./PrepareObject.js";
 import { StartFunc as StartFuncPostItemInsertFunc } from "./PostItemInsertFunc.js";
-
+import { StartFunc as StartFuncCheckBeforeSave } from "./CheckBeforeSave.js"
+    ;
 let StartFunc = (event) => {
     try {
         let jVarLocalEvent = event;
         let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
         let jVarClosestTabPane = jVarLocalCurrentTarget.closest(".tab-pane");
 
-        let jVarObjectToInsert = StartFuncPrepareObject({ inTabPane: jVarClosestTabPane });
+        let jVarLocalFromCheck = StartFuncCheckBeforeSave({ inCurrentTarget: jVarLocalCurrentTarget });
 
-        jFLocalToLocalStorage({ inObjectToInsert: jVarObjectToInsert });
-        StartFuncToDom();
+        if (jVarLocalFromCheck) {
 
-        StartFuncPostItemInsertFunc({ inTabPane: jVarClosestTabPane });
+            let jVarObjectToInsert = StartFuncPrepareObject({ inTabPane: jVarClosestTabPane });
+
+            jFLocalToLocalStorage({ inObjectToInsert: jVarObjectToInsert });
+            StartFuncToDom();
+
+            StartFuncPostItemInsertFunc({ inTabPane: jVarClosestTabPane });
+
+        };
 
     } catch (error) {
         console.log("error : ", error);
