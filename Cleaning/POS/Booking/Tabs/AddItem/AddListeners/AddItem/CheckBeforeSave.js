@@ -22,6 +22,9 @@ let jFLocalForPcs = ({ inClosestTabPane }) => {
         jVarLocalPcsClass.classList.add("is-invalid");
         jVarLocalPcsClass.focus();
         return false;
+    }else{
+        jVarLocalPcsClass.classList.remove("is-invalid");
+        jVarLocalPcsClass.classList.add("is-valid");
     };
 
     return true;
