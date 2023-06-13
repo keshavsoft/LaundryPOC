@@ -26,6 +26,10 @@ const jFLocalClearEntryHtmls = ({ inTabPane }) => {
     jVarLocalItemSelect.classList.remove("is-invalid");
     jVarLocalRate.classList.remove("is-invalid");
     jVarLocalPcs.classList.remove("is-invalid");
+
+    jVarLocalItemSelect.classList.remove("is-valid");
+    jVarLocalRate.classList.remove("is-valid");
+    jVarLocalPcs.classList.remove("is-valid");
 };
 
 const jFLocalSetFocus = ({ inTabPane }) => {
