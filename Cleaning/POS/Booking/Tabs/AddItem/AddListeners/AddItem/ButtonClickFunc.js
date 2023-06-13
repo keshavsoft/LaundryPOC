@@ -19,7 +19,6 @@ let StartFunc = (event) => {
             StartFuncToDom();
 
             StartFuncPostItemInsertFunc({ inTabPane: jVarClosestTabPane });
-
         };
 
     } catch (error) {
