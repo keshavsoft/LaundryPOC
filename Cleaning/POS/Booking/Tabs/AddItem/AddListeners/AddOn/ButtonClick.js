@@ -1,6 +1,7 @@
 import { StartFunc as StartFuncToAddOns } from "../../ToDom/ToTable/ToAddOns.js";
 import { StartFunc as StartFuncToOrderItems } from "../../ToDom/ToTable/ToOrderItems.js";
 import { StartFunc as StartFuncPrepareData } from "./PrepareData.js";
+import { StartFunc as StartFuncCheckBeforeSave } from "./CheckBeforeSave.js";
 
 let StartFunc = () => {
     let jVarLocalAddOnInsertButtonId = document.getElementById("AddOnInsertButtonId");
@@ -9,11 +10,13 @@ let StartFunc = () => {
 };
 
 let jFLocalButtonClick = () => {
-    let jVarLocalItemSerial = StartFuncPrepareData();
+    let jVarLocalFromCheck = StartFuncCheckBeforeSave();
 
-    // StartFuncToOrderItems();
-    StartFuncToAddOns({ inItemSerial: jVarLocalItemSerial });
-    StartFuncToOrderItems();
+    if (jVarLocalFromCheck) {
+        let jVarLocalItemSerial = StartFuncPrepareData();
+        StartFuncToAddOns({ inItemSerial: jVarLocalItemSerial });
+        StartFuncToOrderItems();
+    };
 };
 
 export { StartFunc };
