@@ -10,6 +10,7 @@ let StartFunc = ({ inCurrentTarget }) => {
 
     if (jFLocalForPcs({ inClosestTabPane: jVarLocalClosestTabPane }) === false) return false;
     if (jFLocalForRate({ inClosestTabPane: jVarLocalClosestTabPane }) === false) return false;
+    if (jFLocalForItem({ inClosestTabPane: jVarLocalClosestTabPane }) === false) return false;
 
     return true;
 };
@@ -38,6 +39,18 @@ let jFLocalForRate = ({ inClosestTabPane }) => {
     return true;
 };
 
+let jFLocalForItem = ({ inClosestTabPane }) => {
+    let jVarLocalPcsClass = inClosestTabPane.querySelector(".ItemSelect");
+    let jVarLocalHtmlValue = jVarLocalPcsClass.value;
+    
+    if (parseInt(jVarLocalHtmlValue) > 0 === false) {
+        jVarLocalPcsClass.classList.add("is-invalid");
+        jVarLocalPcsClass.focus();
+        return false;
+    };
 
+    return true;
+
+};
 
 export { StartFunc };
