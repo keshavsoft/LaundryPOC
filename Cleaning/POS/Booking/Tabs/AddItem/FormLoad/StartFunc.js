@@ -13,7 +13,6 @@ let StartFunc = () => {
 
     StartFuncAddFrequent();
     StartFuncToItemAddTemplateRow();
-
 };
 
 const jFShowDeliveryDateTime = () => {

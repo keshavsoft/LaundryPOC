@@ -18,31 +18,6 @@ let StartFunc = ({ inItemSerial, inClonedTemplateRow, inPcs }) => {
     StartFuncClickFuncs({ inItemSerial, inClonedTemplateRow, inPcs });
 };
 
-let jFLocalForButtons = ({ inItemSerial, inClonedTemplateRow, inPcs }) => {
-
-    let jVarLocalOrderItemsOrderItemsDeleteButtonClass = inClonedTemplateRow.querySelector(".OrderItemsDeleteButtonClass");
-    jVarLocalOrderItemsOrderItemsDeleteButtonClass.dataset.itemserial = inItemSerial;
-    jVarLocalOrderItemsOrderItemsDeleteButtonClass.addEventListener("click", jFLocalItemDeleteButtonClickFunc)
-
-    // let jVarLocalOrderItemsEditButtonClass = inClonedTemplateRow.querySelector(".OrderItemsEditButtonClass");
-    // jVarLocalOrderItemsEditButtonClass.value = inItemSerial;
-    // jVarLocalOrderItemsEditButtonClass.addEventListener("click", StartFuncToItemSerialButton);
-
-    let jVarLocalOrderItemsAddOnButtonClass = inClonedTemplateRow.querySelector(".OrderItemsAddOnButtonClass");
-    jVarLocalOrderItemsAddOnButtonClass.dataset.itemserial = inItemSerial;
-    jVarLocalOrderItemsAddOnButtonClass.addEventListener("click", StartFuncToAddOnButton);
-
-    let jVarLocalOrderItemsSerialButtonClass = inClonedTemplateRow.querySelector(".OrderItemsSerialButtonClass");
-    jVarLocalOrderItemsSerialButtonClass.value = inItemSerial;
-    jVarLocalOrderItemsSerialButtonClass.addEventListener("click", StartFuncToItemSerialButton);
-
-
-    let jVarLocalOrderItemsOrderItemsItemPcsClass = inClonedTemplateRow.querySelector(".OrderItemsItemPcsClass");
-    jVarLocalOrderItemsOrderItemsItemPcsClass.value = inPcs;
-
-
-};
-
 const jFLocalItemDeleteButtonClickFunc = (event) => {
     let jVarLocalEvent = event;
     let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
