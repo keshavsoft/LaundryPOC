@@ -1,8 +1,4 @@
 import { StartFunc as StartFuncFromAddOns } from "../../../FromLocalStorage/FromAddOns.js";
-import { StartFunc as StartFuncToItemSerialButton } from "../AddListenersRunTime/ToItemSerialButton.js";
-import { StartFunc as StartFuncToAddOnButton } from "../AddListenersRunTime/ToAddOnButton.js";
-import { StartFunc as StartFuncDeleteFunc } from "../../../LocalStorageFunc/ItemsInOrder/DeleteFunc.js";
-import { StartFunc as StartFuncToOrderItems } from "../ToOrderItems.js";
 import { StartFunc as StartFuncClickFuncs } from "./Buttons/ClickFuncs.js";
 
 let StartFunc = ({ inItemSerial, inClonedTemplateRow, inPcs }) => {
@@ -16,26 +12,6 @@ let StartFunc = ({ inItemSerial, inClonedTemplateRow, inPcs }) => {
     jVarLocalOrderItemsOrderItemsAddOnClass.innerHTML = `${jVarLocalAddOnRateArray.length}-${sum}`;
 
     StartFuncClickFuncs({ inItemSerial, inClonedTemplateRow, inPcs });
-};
-
-const jFLocalItemDeleteButtonClickFunc = (event) => {
-    let jVarLocalEvent = event;
-    let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
-    let jVarLocalDataset = jVarLocalCurrentTarget.dataset;
-    let jVarLocalitemserial = jVarLocalDataset.itemserial;
-
-    let jVarLocalFromDelete = StartFuncDeleteFunc({ inKey: jVarLocalitemserial });
-
-    if (jVarLocalFromDelete) {
-        StartFuncToOrderItems();
-    };
-};
-
-const jFLocalItemEditButtonClickFunc = (event) => {
-    let jVarLocalEvent = event;
-    let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
-    console.log("Edit", jVarLocalCurrentTarget);
-
 };
 
 export { StartFunc };

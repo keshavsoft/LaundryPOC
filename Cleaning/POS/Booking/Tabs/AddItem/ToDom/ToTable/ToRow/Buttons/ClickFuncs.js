@@ -20,7 +20,6 @@ let StartFunc = ({ inItemSerial, inClonedTemplateRow, inPcs }) => {
     jVarLocalOrderItemsSerialButtonClass.value = inItemSerial;
     jVarLocalOrderItemsSerialButtonClass.addEventListener("click", StartFuncToItemSerialButton);
 
-
     let jVarLocalOrderItemsOrderItemsItemPcsClass = inClonedTemplateRow.querySelector(".OrderItemsItemPcsClass");
     jVarLocalOrderItemsOrderItemsItemPcsClass.value = inPcs;
     jVarLocalOrderItemsOrderItemsItemPcsClass.dataset.itemserial = inItemSerial;
