@@ -2,7 +2,7 @@ import { StartFunc as StartFuncAddToLocalStorageItemsInOrder } from "./ItemsTabl
 import { StartFunc as StartFuncAddOnData } from "./AddOnData/Insert.js";
 
 let StartFunc = () => {
-   // StartFuncAddToLocalStorageItemsInOrder();
+    StartFuncAddToLocalStorageItemsInOrder();
     StartFuncAddOnData();
 };
 
