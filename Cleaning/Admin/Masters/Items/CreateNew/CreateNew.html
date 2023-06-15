@@ -212,8 +212,18 @@
                                 <td></td>
                                 <td>
                                     <div class="form-group">
+                                        <input class="form-control" type="text"
+                                            id="CreateFolderInputId" placeholder="Enter the Item Name..."
+                                            autofocus="">
+                                        <div class="invalid-feedback">
+                                            Should not be empty!
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
                                         <input class="form-control" type="text" name="CloneName"
-                                            id="CreateFolderInputId" placeholder="Enter the Folder Name..."
+                                            id="RateId" placeholder="Enter the Rate"
                                             autofocus="">
                                         <div class="invalid-feedback">
                                             Should not be empty!
@@ -253,7 +263,6 @@
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
     <script id="HbsTemplateForFoldersOnly" type="text/x-handlebars">
-        {{log "ssssssss" this}}
                 {{#each this}}
                 <tr class="{{RowClass}}" data-foldername="{{FolderName}}">
                     <td class="text-center">
@@ -319,7 +328,7 @@
         jFChangeHeaderActiveClass();
     </script>
 
-    <script src="./Js/CreateFolder.js" type="module"></script>
+    <script src="./Js/CreateNew.js" type="module"></script>
 </body>
 
 </html>
