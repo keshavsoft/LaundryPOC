@@ -7,7 +7,7 @@ let StartFunc = () => {
     return {
         ItemName: jVarLocalFolderName,
         ...jFLocalRate(),
-        ...jFLocalPics()
+        ...jFLocalPcs()
     };
 };
 
@@ -23,9 +23,9 @@ let jFLocalRate = () => {
 };
 
 
-let jFLocalPics = () => {
-    let jVarLocalHtmlPicsId = "PicsId";
-    let jVarCreateFolderInputId = document.getElementById(jVarLocalHtmlPicsId);
+let jFLocalPcs = () => {
+    let jVarLocalHtmlPicsId = "PcsId";
+    let jVarCreateFolderInputId = document.getElementById(jVarLocalHtmlPcsId);
 
     let jVarLocalFolderName = parseInt(jVarCreateFolderInputId.value.trim());
 
