@@ -197,20 +197,20 @@
 
             <div class="card mt-3">
                 <div class="card-header text-bg-secondary">
-                    TopItems 
+                    TopItems
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Item Name</th>
-                                <th>Rate</th>
-                                <th>Pics</th>
+                                <th with="10%">#</th>
+                                <th with="50%">Item Name</th>
+                                <th with="20%" style="text-align:right">Rate</th>
+                                <th with="20%" style="text-align:right">Pics</th>
                             </tr>
-                         <tr>
+                            <tr>
                                 <td></td>
-                                <!-- <td>
+                                <td>
                                     <div class="form-group">
                                         <input class="form-control" type="text" id="CreateFolderInputId"
                                             placeholder="Enter the Item Name..." autofocus value="Blanket">
@@ -228,8 +228,8 @@
                                             Should not be empty!
                                         </div>
                                     </div>
-                                </td> -->
-                                <!-- <td>
+                                </td>
+                                <td>
                                     <div class="form-group">
                                         <input class="form-control" type="text" name="CloneName" id="PicsId"
                                             placeholder="Enter the Pics" value="1">
@@ -238,13 +238,13 @@
                                             Should not be empty!
                                         </div>
                                     </div>
-                                </td> -->
+                                </td>
                                 <td>
                                     <button type="button" id="CreateFolderButtonId" class="btn btn-outline-info">
                                         Create Item
                                     </button>
                                 </td>
-                            </tr> 
+                            </tr>
                         </thead>
                         <tbody id="KCont1">
 
@@ -280,6 +280,12 @@
                     <td>
                         {{ItemName}}
                     </td>
+                    <td style="text-align:right">
+                        {{DryWashRate}}
+                    </td>
+                <td  style="text-align:right">
+                    {{Pcs}}
+                </td>
                     
                     <td>
                     </td>
