@@ -24,7 +24,7 @@ let jFLocalRate = () => {
 
 
 let jFLocalPcs = () => {
-    let jVarLocalHtmlPicsId = "PcsId";
+    let jVarLocalHtmlPcsId = "PcsId";
     let jVarCreateFolderInputId = document.getElementById(jVarLocalHtmlPcsId);
 
     let jVarLocalFolderName = parseInt(jVarCreateFolderInputId.value.trim());
