@@ -3,7 +3,7 @@ import { StartFunc as StartFuncAddlisteners } from "./Addlisteners.js";
 
 const StartFunc = ({ inProjectName }) => {
     StartFuncShowAlerts();
-    StartFuncAddlisteners({ inProjectName });
+   // StartFuncAddlisteners({ inProjectName });
 };
 
 export { StartFunc };
