@@ -22,6 +22,7 @@ let jFLocalRate = () => {
     };
 };
 
+
 let jFLocalPics = () => {
     let jVarLocalHtmlPicsId = "PicsId";
     let jVarCreateFolderInputId = document.getElementById(jVarLocalHtmlPicsId);
