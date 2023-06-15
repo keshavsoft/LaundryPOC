@@ -1,20 +1,21 @@
 import { StartFunc as StartFuncPostFetch } from "./PostFetch.js";
 import { StartFunc as StartFuncFetchFunc } from "./FetchFunc.js";
+import { StartFunc as StartFuncPreparePostData } from "./PreparePostData.js";
 
 let StartFunc = async ({ inProjectName }) => {
     if (jFLocalCheckBeforeFetch()) {
-        let jVarLocalBodyData = jFLocalPreparePostData();
+        let jVarLocalBodyData = StartFuncPreparePostData();
         let jVarLocalFolderName = jVarLocalBodyData.NewFolderName;
 
         let response = await StartFuncFetchFunc({
             inBodyData: jVarLocalBodyData,
             inProjectName
         });
-
-        StartFuncPostFetch({
-            inFromFetch: response,
-            inNewFolderName: jVarLocalFolderName
-        });
+        
+        // StartFuncPostFetch({
+        //     inFromFetch: response,
+        //     inNewFolderName: jVarLocalFolderName
+        // });
     };
 };
 
