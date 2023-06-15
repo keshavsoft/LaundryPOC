@@ -5,21 +5,20 @@ let StartFunc = () => {
     let jVarLocalFolderName = jVarCreateFolderInputId.value.trim();
 
     return {
-        ItemName: jVarLocalFolderName
+        ItemName: jVarLocalFolderName,
+        ...jFLocalRate()
     };
 };
 
-
-let StartFuncId = () => {
-    let jVarLocalHtmlRateId = "RateId"; 
+let jFLocalRate = () => {
+    let jVarLocalHtmlRateId = "RateId";
     let jVarCreateFolderInputId = document.getElementById(jVarLocalHtmlRateId);
 
-    let jVarLocalFolderName = jVarCreateFolderInputId.value.trim();
+    let jVarLocalFolderName = parseInt(jVarCreateFolderInputId.value.trim());
 
     return {
-        ItemRate: jVarLocalFolderName
+        DryWashRate: jVarLocalFolderName
     };
 };
 
-
-export { StartFunc,StartFuncId };
+export { StartFunc };
