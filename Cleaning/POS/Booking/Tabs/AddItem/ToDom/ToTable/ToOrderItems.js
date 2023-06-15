@@ -61,6 +61,7 @@ let ShowOnDom = ({ inJsonData }) => {
     let jVarLocalBSItemsShowCollapseId = bootstrap.Collapse.getOrCreateInstance(jVarLocalItemsShowCollapseId);
 
     jVarLocalBSItemsShowCollapseId.show();
+
 };
 
 let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, inItemName, inItemNamePk, inWashType, inWashTypePk, inPcs, inItemRate, inAddOn, inTotal, inlocation, inlocationPk, inDeliveryDateTime }) => {

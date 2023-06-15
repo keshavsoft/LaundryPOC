@@ -10,12 +10,11 @@ let StartFunc = ({ inItemSerial }) => {
 
     jVarLocalHtmlTableBody.innerHTML = "";
 
-    // let jVarLocalItemsInOrder = localStorage.getItem("AddOnData");
-    // let jVarLocaljVarLocalItemsInOrderJson = JSON.parse(jVarLocalItemsInOrder);
     let jVarLocaljVarLocalItemsInOrderJson = StartFuncFromAddOns({ inItemSerial });
-    let jVarLocalFilered = jFLocalFilterData({ inData: jVarLocaljVarLocalItemsInOrderJson, inItemSerial });
+    // let jVarLocalFilered = jFLocalFilterData({ inData: jVarLocaljVarLocalItemsInOrderJson, inItemSerial });
+    console.log("aaaaaaaa : ", jVarLocaljVarLocalItemsInOrderJson);
 
-    jVarLocalFilered.forEach(
+    jVarLocaljVarLocalItemsInOrderJson.forEach(
         LoopItem => {
             jFLocalInsertRow({
                 inTableBodyId: jVarLocalHtmlTableBody,
@@ -54,20 +53,33 @@ let jFLocalInsertRow = ({ inTableBodyId, inAddOnService, inAddOnRate, inAddOnIte
     let jVarLocalTableRowLength = table.rows.length
 
     // Create an empty <tr> element and add it to the 1st position of the table:
-    var row = table.insertRow(0);
+    var row = table.insertRow();
 
-    // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
-    var cell5 = row.insertCell(4);
+    var cell1 = row.insertCell();
+    var cell2 = row.insertCell();
+    var cell3 = row.insertCell();
+    var cell4 = row.insertCell();
+    var cell5 = row.insertCell();
 
-    cell1.innerHTML = inAddOnItemSerial;
-    cell2.innerHTML = jVarLocalTableRowLength + 1;
-    cell3.innerHTML = inAddOnService;
-    cell4.innerHTML = inAddOnRate;
-    cell5.innerHTML = inAddOnImageSerial;
+    // cell1.innerHTML = inAddOnItemSerial;
+    // cell2.innerHTML = jVarLocalTableRowLength + 1;
+
+
+    // cell3.innerHTML = inAddOnService;
+    // cell4.innerHTML = inAddOnRate;
+    // cell5.innerHTML = inAddOnImageSerial;
+
+    var newText1 = document.createTextNode(inAddOnItemSerial);
+    var newText2 = document.createTextNode(jVarLocalTableRowLength + 1);
+    var newText3 = document.createTextNode(inAddOnService);
+    var newText4 = document.createTextNode(inAddOnRate);
+    var newText5 = document.createTextNode(inAddOnImageSerial);
+
+    cell1.appendChild(newText1);
+    cell2.appendChild(newText2);
+    cell3.appendChild(newText3);
+    cell4.appendChild(newText4);
+    cell5.appendChild(newText5);
 };
 
 export { StartFunc };

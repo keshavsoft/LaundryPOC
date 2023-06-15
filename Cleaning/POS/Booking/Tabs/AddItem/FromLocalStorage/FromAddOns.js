@@ -1,8 +1,6 @@
 import { StartFunc as StartFuncFromAddOnsAll } from "./FromAddOnsAll.js";
 
 let StartFunc = ({ inItemSerial }) => {
-
-
     let jVarLocalHtmlIdAddOnCardId = document.getElementById("AddOnCardId");
     let jVarLocalAddOnItemToAddOnClass = jVarLocalHtmlIdAddOnCardId.querySelector(".AddOnItemToAddOnClass");
     jVarLocalAddOnItemToAddOnClass.value = inItemSerial;
@@ -23,13 +21,11 @@ let StartFunc = ({ inItemSerial }) => {
         }
     );
 
-
     let jVarLocalFilered = jVarLocalAddOnArray.filter(element => {
-        return element.AddOnItemSerial === inItemSerial;
+        return element.AddOnItemSerial === parseInt(inItemSerial);
     });
 
-
-    console.log("mmmmmmmmm : ", inItemSerial, jVarLocalAddOnArray, jVarLocalFilered);
+    console.log("11111 : ", jVarLocalFilered, jVarLocalAddOnArray);
 
     return jVarLocalFilered;
 };

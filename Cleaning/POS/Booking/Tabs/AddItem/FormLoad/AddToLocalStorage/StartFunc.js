@@ -3,7 +3,7 @@ import { StartFunc as StartFuncEntriesData } from "./EntriesData.js";
 
 let StartFunc = () => {
     StartFuncMastersData();
-    StartFuncEntriesData();
+    // StartFuncEntriesData();
 };
 
 export { StartFunc }

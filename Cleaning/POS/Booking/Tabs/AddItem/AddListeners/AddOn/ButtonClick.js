@@ -9,13 +9,17 @@ let StartFunc = () => {
     jVarLocalAddOnInsertButtonId.addEventListener("click", jFLocalButtonClick);
 };
 
-let jFLocalButtonClick = () => {
+let jFLocalButtonClick = (event) => {
+    event.preventDefault();
+
     let jVarLocalFromCheck = StartFuncCheckBeforeSave();
 
     if (jVarLocalFromCheck) {
         let jVarLocalItemSerial = StartFuncPrepareData();
+        console.log("jVarLocalItemSerial : ", jVarLocalItemSerial);
         StartFuncToAddOns({ inItemSerial: jVarLocalItemSerial });
-        StartFuncToOrderItems();
+        // StartFuncToOrderItems();
+
     };
 };
 
