@@ -1,4 +1,5 @@
-import { StartFunc as StartFuncFromAddOns } from "../../FromLocalStorage/FromAddOns.js";
+import { StartFunc as StartFuncFromAddOns } from "../../../FromLocalStorage/FromAddOns.js";
+import { StartFunc as StartFuncInsertRow } from "./InsertRow.js";
 
 let StartFunc = ({ inItemSerial, inNewPk }) => {
     let jVarLocalHtmlIdAddOnCardId = document.getElementById("AddOnCardId");
@@ -14,13 +15,13 @@ let StartFunc = ({ inItemSerial, inNewPk }) => {
 
     jVarLocaljVarLocalItemsInOrderJson.forEach(
         LoopItem => {
-            jFLocalInsertRow({
+            StartFuncInsertRow({
                 inTableBodyId: jVarLocalHtmlTableBody,
                 inAddOnService: LoopItem.AddOnService,
                 inAddOnRate: LoopItem.AddOnRate,
                 inAddOnItemSerial: LoopItem.AddOnItemSerial,
                 inAddOnImageSerial: LoopItem.AddOnImageSerial,
-                inNewPk
+                inNewPk: LoopItem.RowPk
             });
         }
     );

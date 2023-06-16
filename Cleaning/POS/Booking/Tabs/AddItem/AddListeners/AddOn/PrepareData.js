@@ -12,14 +12,21 @@ let StartFunc = () => {
 
     var jVarLocalAddOnServiceIdtext = jVarLocalAddOnServiceId.options[jVarLocalAddOnServiceId.selectedIndex].text;
 
-    StartFuncToLocalStorage({
+    // StartFuncToLocalStorage({
+    //     inAddOnService: jVarLocalAddOnServiceIdtext,
+    //     inAddOnRate: parseInt(jVarLocalAddOnRateIdValue),
+    //     inAddOnItemSerial: parseInt(jVarLocaljVarLocalAddOnItemIdValue),
+    //     inAddOnImageSerial: jVarLocaljVarLocalAddOnImageIdValue
+    // });
+
+    // return jVarLocaljVarLocalAddOnItemIdValue;
+
+    return {
         inAddOnService: jVarLocalAddOnServiceIdtext,
         inAddOnRate: parseInt(jVarLocalAddOnRateIdValue),
         inAddOnItemSerial: parseInt(jVarLocaljVarLocalAddOnItemIdValue),
         inAddOnImageSerial: jVarLocaljVarLocalAddOnImageIdValue
-    });
-
-    return jVarLocaljVarLocalAddOnItemIdValue;
+    };
 };
 
 export { StartFunc };

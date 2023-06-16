@@ -70,7 +70,6 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
 
     const clone = jVarLocalTemplateForOrderItemsTableRow.content.cloneNode(true);
 
-
     let jVarLocalOrderItemsCategoryClass = clone.querySelector(".OrderItemsCategoryClass");
     jVarLocalOrderItemsCategoryClass.innerHTML = inCategory;
 

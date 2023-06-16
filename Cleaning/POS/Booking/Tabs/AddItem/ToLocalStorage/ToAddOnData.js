@@ -1,5 +1,5 @@
 let StartFunc = ({ inAddOnService, inAddOnRate, inAddOnItemSerial, inAddOnImageSerial }) => {
-    jFLocalToLocalStorage({ inAddOnService, inAddOnRate, inAddOnItemSerial, inAddOnImageSerial });
+    return jFLocalToLocalStorage({ inAddOnService, inAddOnRate, inAddOnItemSerial, inAddOnImageSerial });
 };
 
 let jFLocalToLocalStorage = ({ inAddOnService, inAddOnRate, inAddOnItemSerial, inAddOnImageSerial }) => {
@@ -27,9 +27,13 @@ let jFLocalToLocalStorage = ({ inAddOnService, inAddOnRate, inAddOnItemSerial, i
         jVarLocalOrderItems[jVarLocalNewKey] = jVarLocalObjectToInsert;
 
         localStorage.setItem(jVarLocalStorageKey, JSON.stringify(jVarLocalOrderItems));
+
+        return jVarLocalNewKey;
     } catch (error) {
         console.log("error : ", error);
     };
+
+    return 0;
 };
 
 export { StartFunc };

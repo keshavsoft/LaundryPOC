@@ -1,7 +1,9 @@
-import { StartFunc as StartFuncToAddOns } from "../../ToDom/ToTable/ToAddOns.js";
-import { StartFunc as StartFuncToOrderItems } from "../../ToDom/ToTable/ToOrderItems.js";
+// import { StartFunc as StartFuncToAddOns } from "../../ToDom/ToTable/ToAddOns.js";
 import { StartFunc as StartFuncPrepareData } from "./PrepareData.js";
 import { StartFunc as StartFuncCheckBeforeSave } from "./CheckBeforeSave.js";
+import { StartFunc as StartFuncToLocalStorage } from "../../ToLocalStorage/ToAddOnData.js";
+
+import { StartFunc as StartFuncToAddOns } from "../../ToDom/ToTable/AddOnSection/StartFunc.js";
 
 let StartFunc = () => {
     let jVarLocalAddOnInsertButtonId = document.getElementById("AddOnInsertButtonId");
@@ -15,11 +17,13 @@ let jFLocalButtonClick = (event) => {
     let jVarLocalFromCheck = StartFuncCheckBeforeSave();
 
     if (jVarLocalFromCheck) {
-        let jVarLocalItemSerial = StartFuncPrepareData();
-        console.log("jVarLocalItemSerial : ", jVarLocalItemSerial);
-        StartFuncToAddOns({ inItemSerial: jVarLocalItemSerial });
-        // StartFuncToOrderItems();
+        // let jVarLocalItemSerial = StartFuncPrepareData();
 
+        let jVarLocalDataToInsert = StartFuncPrepareData();
+
+        let jVarLocalNewPk = StartFuncToLocalStorage(jVarLocalDataToInsert);
+
+        StartFuncToAddOns({ inItemSerial: jVarLocalDataToInsert.inAddOnItemSerial, inNewPk: jVarLocalNewPk });
     };
 };
 

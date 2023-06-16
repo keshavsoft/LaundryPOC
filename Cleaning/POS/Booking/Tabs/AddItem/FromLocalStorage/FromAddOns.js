@@ -25,8 +25,6 @@ let StartFunc = ({ inItemSerial }) => {
         return element.AddOnItemSerial === parseInt(inItemSerial);
     });
 
-    console.log("11111 : ", jVarLocalFilered, jVarLocalAddOnArray);
-
     return jVarLocalFilered;
 };
 
