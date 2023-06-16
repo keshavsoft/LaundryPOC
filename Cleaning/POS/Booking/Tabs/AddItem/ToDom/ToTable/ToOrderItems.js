@@ -13,7 +13,7 @@ let StartFunc = () => {
     StartFuncPrepareForOrderItemsTable();
 
     let jVarLocalJsonData = StartFuncOrderItemsToShow();
-
+    console.log("jVarLocalJsonData : ", jVarLocalJsonData);
     if (jVarLocalJsonData === null === false) {
         if ("BodyData" in jVarLocalJsonData) {
             ShowOnDom({ inJsonData: jVarLocalJsonData.BodyData });

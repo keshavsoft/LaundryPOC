@@ -1,9 +1,17 @@
 import { StartFunc as StartFuncAddToLocalStorageItemsInOrder } from "./ItemsTable/ItemsInOrder.js";
-import { StartFunc as StartFuncAddOnData } from "./AddOnData/Insert.js";
+// import { StartFunc as StartFuncAddOnData } from "./AddOnData/Insert.js";
 
 let StartFunc = () => {
-    StartFuncAddToLocalStorageItemsInOrder();
-    StartFuncAddOnData();
+    if ("ItemsInOrder" in localStorage === false) {
+        localStorage.setItem("ItemsInOrder", JSON.stringify({}));
+    };
+
+    if ("ItemsInOrder" in localStorage === false) {
+        localStorage.setItem("AddOnData", JSON.stringify({}));
+    };
+
+    // StartFuncAddToLocalStorageItemsInOrder();
+    // StartFuncAddOnData();
 };
 
 export { StartFunc }
