@@ -1,7 +1,7 @@
 import { StartFunc as StartFuncFromAddOns } from "../../../FromLocalStorage/FromAddOns.js";
 import { StartFunc as StartFuncInsertRow } from "./InsertRow.js";
 
-let StartFunc = ({ inItemSerial, inNewPk }) => {
+let StartFunc = ({ inItemSerial }) => {
     let jVarLocalHtmlIdAddOnCardId = document.getElementById("AddOnCardId");
     let jVarLocalAddOnItemToAddOnClass = jVarLocalHtmlIdAddOnCardId.querySelector(".AddOnItemToAddOnClass");
     jVarLocalAddOnItemToAddOnClass.value = inItemSerial;

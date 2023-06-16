@@ -17,13 +17,11 @@ let jFLocalButtonClick = (event) => {
     let jVarLocalFromCheck = StartFuncCheckBeforeSave();
 
     if (jVarLocalFromCheck) {
-        // let jVarLocalItemSerial = StartFuncPrepareData();
-
         let jVarLocalDataToInsert = StartFuncPrepareData();
 
         let jVarLocalNewPk = StartFuncToLocalStorage(jVarLocalDataToInsert);
 
-        StartFuncToAddOns({ inItemSerial: jVarLocalDataToInsert.inAddOnItemSerial, inNewPk: jVarLocalNewPk });
+        StartFuncToAddOns({ inItemSerial: jVarLocalDataToInsert.inAddOnItemSerial });
     };
 };
 

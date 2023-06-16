@@ -6,7 +6,7 @@ let StartFunc = () => {
         localStorage.setItem("ItemsInOrder", JSON.stringify({}));
     };
 
-    if ("ItemsInOrder" in localStorage === false) {
+    if ("AddOnData" in localStorage === false) {
         localStorage.setItem("AddOnData", JSON.stringify({}));
     };
 

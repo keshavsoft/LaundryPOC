@@ -1,3 +1,6 @@
+import { DeleteFromPk } from "../../../LocalStorageFunc/AddOnData/DeleteFunc.js";
+import { StartFunc as StartFuncFrom } from "./StartFunc.js";
+
 let StartFunc = ({ inTableBodyId, inAddOnService, inAddOnRate, inAddOnItemSerial, inAddOnImageSerial, inNewPk }) => {
     var table = inTableBodyId;
     let jVarLocalTableRowLength = table.rows.length
@@ -23,6 +26,12 @@ let StartFunc = ({ inTableBodyId, inAddOnService, inAddOnRate, inAddOnItemSerial
     const clone = jVarLocalTemplate.content.cloneNode(true);
     let jVarLocalDeleteButton = clone.querySelector("button");
     jVarLocalDeleteButton.setAttribute("data-pk", inNewPk);
+    jVarLocalDeleteButton.addEventListener("click", (event) => {
+        jFLocalDeleteFunc({
+            inItemSerial: inAddOnItemSerial,
+            inEvent: event
+        });
+    });
 
     cell1.appendChild(newText1);
     cell2.appendChild(newText2);
@@ -30,6 +39,18 @@ let StartFunc = ({ inTableBodyId, inAddOnService, inAddOnRate, inAddOnItemSerial
     cell4.appendChild(newText4);
     cell5.appendChild(newText5);
     cell6.appendChild(clone);
+};
+
+const jFLocalDeleteFunc = ({ inEvent, inItemSerial }) => {
+    let jVarLocalEvent = inEvent;
+    let jVarLocalCurrentTarget = jVarLocalEvent.currentTarget;
+    let jVarLocalPk = jVarLocalCurrentTarget.dataset.pk;
+
+    let jVarLocalFromDelete = DeleteFromPk({ inPK: jVarLocalPk });
+
+    if (jVarLocalFromDelete) {
+        StartFuncFrom({ inItemSerial });
+    };
 };
 
 export { StartFunc };
