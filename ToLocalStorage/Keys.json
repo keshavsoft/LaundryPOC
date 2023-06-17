@@ -1,5 +1,5 @@
 {
     "ItemKey": "Items",
-    "Customers":"Customers"
-
+    "Customers": "Customers",
+    "CustomersSubKey": "CustomerNames"
 }

@@ -1,9 +1,9 @@
 import { StartFunc as StartFuncShowAlerts } from "./ShowAlerts.js";
 import { StartFunc as StartFuncAddlisteners } from "./Addlisteners.js";
 
-const StartFunc = ({ inProjectName }) => {
+const StartFunc = () => {
     StartFuncShowAlerts();
-    StartFuncAddlisteners({ inProjectName });
+    StartFuncAddlisteners();
 };
 
 export { StartFunc };
