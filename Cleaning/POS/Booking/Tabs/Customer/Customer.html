@@ -210,16 +210,16 @@
                         <thead>
                             <tr>
                                 <th width="5%">#</th>
-                                <th width="50%">Item Name</th>
-                                <th width="15%" style="text-align:right">Rate</th>
-                                <th width="15%" style="text-align:right">Pcs</th>
+                                <th width="50%">Customer Name</th>
+                                <th width="15%" style="text-align:center">City</th>
+                                <th width="15%" style="text-align:center">Mobile</th>
                                 <th width="15%"></th>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>
                                     <div class="form-group">
-                                        <input class="form-control" type="text" id="CreateFolderInputId"
+                                        <input class="form-control" type="text" name="CustomerName" id="CustomerNameId"
                                             placeholder="Enter the Item Name..." autofocus value="Blanket">
                                         <div class="invalid-feedback">
                                             Should not be empty!
@@ -228,7 +228,7 @@
                                 </td>
                                 <td>
                                     <div class="form-group">
-                                        <input class="form-control" type="Number" name="CloneName" id="RateId"
+                                        <input class="form-control" type="text" name="City" id="CityId"
                                             placeholder="Enter the Rate" value="150">
 
                                         <div class="invalid-feedback">
@@ -238,7 +238,7 @@
                                 </td>
                                 <td>
                                     <div class="form-group">
-                                        <input class="form-control" type="Number" name="CloneName" id="PcsId"
+                                        <input class="form-control" type="Number" name="Mobile" id="MobileId"
                                             placeholder="Enter the Pcs" value="1">
 
                                         <div class="invalid-feedback">
@@ -247,7 +247,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <button type="button" id="CreateFolderButtonId" class="btn btn-outline-info">
+                                    <button type="button" id="CreateButtonId" class="btn btn-outline-info">
                                         Create Item
                                     </button>
                                 </td>
@@ -279,14 +279,20 @@
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
     <script id="HbsTemplateForFoldersOnly" type="text/x-handlebars">
-                {{#each this}}
+                {{#each CustomerNames}}
                 {{log "inside" this}}
                 <tr class="{{RowClass}}" data-foldername="{{FolderName}}">
                     <td class="text-center">
                         {{ForSNo @index}}
                     </td>
                     <td>
-                        {{ItemName}}
+                        {{CustomerName}}
+                    </td>
+                    <td>
+                        {{City}}
+                    </td>
+                    <td>
+                        {{Mobile}}
                     </td>
                    
                     <td style="text-align:right">
