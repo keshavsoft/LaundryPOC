@@ -5,6 +5,7 @@ import { StartFunc as StartFuncPreparePostData } from "./PreparePostData.js";
 let StartFunc = async ({ inProjectName }) => {
     if (jFLocalCheckBeforeFetch()) {
         let jVarLocalBodyData = StartFuncPreparePostData();
+        console.log("jVarLocalBodyData",jVarLocalBodyData);
         let jVarLocalFolderName = jVarLocalBodyData.NewFolderName;
 
         let response = await StartFuncFetchFunc({
@@ -20,7 +21,7 @@ let StartFunc = async ({ inProjectName }) => {
 };
 
 let jFLocalCheckBeforeFetch = () => {
-    let jVarLocalHtmlId = "CreateFolderInputId";
+    let jVarLocalHtmlId = "CustomerNameId";
     let jVarCreateFolderInputId = document.getElementById(jVarLocalHtmlId);
 
     let jVarLocalFolderName = jVarCreateFolderInputId.value;

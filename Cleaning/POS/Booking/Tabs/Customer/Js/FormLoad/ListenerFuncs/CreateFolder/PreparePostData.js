@@ -1,21 +1,21 @@
 let StartFunc = () => {
-    let jVarLocalHtmlId = "CreateFolderInputId";
-    let jVarCreateFolderInputId = document.getElementById(jVarLocalHtmlId);
+    let jVarLocalHtmlId = "CustomerNameId";
+    let jVarCreateCustomerInputId = document.getElementById(jVarLocalHtmlId);
 
-    let jVarLocalFolderName = jVarCreateFolderInputId.value.trim();
+    let jVarLocalFolderName = jVarCreateCustomerInputId.value.trim();
 
     return {
         ItemName: jVarLocalFolderName,
-        ...jFLocalRate(),
-        ...jFLocalPcs()
+        ...jFLocalCity(),
+        ...jFLocalMobile()
     };
 };
 
-let jFLocalRate = () => {
-    let jVarLocalHtmlRateId = "RateId";
+let jFLocalCity = () => {
+    let jVarLocalHtmlRateId = "CityId";
     let jVarCreateFolderInputId = document.getElementById(jVarLocalHtmlRateId);
 
-    let jVarLocalFolderName = parseInt(jVarCreateFolderInputId.value.trim());
+    let jVarLocalFolderName = jVarCreateFolderInputId.value.trim();
 
     return {
         DryWashRate: jVarLocalFolderName
@@ -23,9 +23,9 @@ let jFLocalRate = () => {
 };
 
 
-let jFLocalPcs = () => {
-    let jVarLocalHtmlPcsId = "PcsId";
-    let jVarCreateFolderInputId = document.getElementById(jVarLocalHtmlPcsId);
+let jFLocalMobile = () => {
+    let jVarLocalHtmlMobileId = "MobileId";
+    let jVarCreateFolderInputId = document.getElementById(jVarLocalHtmlMobileId);
 
     let jVarLocalFolderName = parseInt(jVarCreateFolderInputId.value.trim());
 

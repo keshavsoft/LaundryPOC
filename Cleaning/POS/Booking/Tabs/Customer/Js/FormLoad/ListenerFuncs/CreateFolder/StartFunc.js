@@ -1,9 +1,9 @@
 import { StartFunc as StartFuncButtonClickFunc } from "./ButtonClickFunc.js";
 
 const StartFunc = ({ inProjectName }) => {
-    let jVarLocalCreateFolderButtonId = document.getElementById("CreateFolderButtonId");
+    let jVarLocalCreateButtonId = document.getElementById("CreateButtonId");
 
-    jVarLocalCreateFolderButtonId.addEventListener("click", async () => {
+    jVarLocalCreateButtonId.addEventListener("click", async () => {
         await StartFuncButtonClickFunc({
             inProjectName
         });
