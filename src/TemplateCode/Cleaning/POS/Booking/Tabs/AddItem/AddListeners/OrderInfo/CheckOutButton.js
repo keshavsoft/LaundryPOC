@@ -1,5 +1,6 @@
 import { StartFunc as StartFuncItemsInOrder } from "../../LocalStorageFunc/ItemsInOrder/ReturnData.js";
 import { StartFunc as StartFuncAddOnData } from "../../LocalStorageFunc/AddOnData/ReturnData.js";
+import { StartFunc as StartFuncOrdersData } from "../../../../LocalStorageFunc/OrdersData/InsertGeneratePk.js";
 
 const StartFunc = () => {
     let jVarLocalHtmlId = "CheckOutId";
@@ -10,14 +11,21 @@ const StartFunc = () => {
 
 const jFLocalButtonClickFunc = () => {
     let jVarLocalOrderNumberId = document.getElementById("OrderNumberId");
-    let jVarLocalOrderNumber = jVarLocalOrderNumberId.innerHTML;
+    //let jVarLocalOrderNumber = jVarLocalOrderNumberId.innerHTML;
+
+    // let jVarLocalToLocalStorage = {};
+    // jVarLocalToLocalStorage[jVarLocalOrderNumber] = {};
+    // jVarLocalToLocalStorage[jVarLocalOrderNumber].ItemsInOrder = StartFuncItemsInOrder();
+    // jVarLocalToLocalStorage[jVarLocalOrderNumber].AddOnData = StartFuncAddOnData();
 
     let jVarLocalToLocalStorage = {};
-    jVarLocalToLocalStorage[jVarLocalOrderNumber] = {};
-    jVarLocalToLocalStorage[jVarLocalOrderNumber].ItemsInOrder = StartFuncItemsInOrder();
-    jVarLocalToLocalStorage[jVarLocalOrderNumber].AddOnData = StartFuncAddOnData();
+    jVarLocalToLocalStorage.ItemsInOrder = StartFuncItemsInOrder();
+    jVarLocalToLocalStorage.AddOnData = StartFuncAddOnData();
 
-    localStorage.setItem("OrdersData", JSON.stringify(jVarLocalToLocalStorage));
+    let jVarLocalOrderNumber = StartFuncOrdersData({ inData: jVarLocalToLocalStorage });
+    jVarLocalOrderNumberId.innerHTML = jVarLocalOrderNumber;
+
+    // localStorage.setItem("OrdersData", JSON.stringify(jVarLocalToLocalStorage));
 };
 
 export { StartFunc }
