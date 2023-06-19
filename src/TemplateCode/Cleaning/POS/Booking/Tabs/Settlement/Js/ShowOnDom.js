@@ -1,6 +1,6 @@
 import { StartFunc as StartFuncFromLocalStorage } from "./FromLocalStorage/Items.js";
 
-let StartFunc = async ({ inProjectName }) => {
+let StartFunc = async () => {
     let jVarLocalDataNeeded = StartFuncFromLocalStorage();
     
     if (jVarLocalDataNeeded !== null) {

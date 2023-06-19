@@ -1,7 +1,7 @@
-import { StartFunc as StartFuncCreateFolder } from "./CreateFolder/StartFunc.js";
+import { StartFunc as StartFuncSaveButton } from "./SaveButton/StartFunc.js";
 
-let StartFunc = ({ inProjectName }) => {
-    StartFuncCreateFolder({ inProjectName });
+let StartFunc = () => {
+    StartFuncSaveButton();
 };
 
 export { StartFunc };

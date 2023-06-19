@@ -1,9 +1,10 @@
-import { StartFunc as StartFuncShowAlerts } from "./ShowAlerts.js";
 import { StartFunc as StartFuncAddlisteners } from "./Addlisteners.js";
+import { StartFunc as StartFuncFromUrlParams } from "./FromUrlParams/StartFunc.js";
 
-const StartFunc = ({ inProjectName }) => {
-    StartFuncShowAlerts();
-    StartFuncAddlisteners({ inProjectName });
+const StartFunc = () => {
+    StartFuncFromUrlParams();
+    // StartFuncShowAlerts();
+    StartFuncAddlisteners();
 };
 
 export { StartFunc };
