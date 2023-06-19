@@ -1,5 +1,6 @@
 import { StartFunc as StartFuncToLocalStorage } from "./ToLocalStorage/Items.js";
 import { StartFunc as StartFuncCustomers } from "./ToLocalStorage/Customers/Bulk.js";
+import { StartFunc as StartFuncOrdersData } from "./ToLocalStorage/OrdersData/Bulk.js";
 
 const StartFunc = async () => {
     let jVarLocalHtmlId = "LoadDataId";
@@ -12,14 +13,7 @@ const StartFuncLoad = async () => {
 
     await jFLocalForItems({ indirHandle: dirHandle });
     await jFLocalForCustomers({ indirHandle: dirHandle });
-
-    // const ConfigHandle = await dirHandle.getFileHandle('Items.json');
-    // let jVarLocalgetFile = await ConfigHandle.getFile();
-
-    // let jVarLocalgetFileData = await jVarLocalgetFile.text();
-
-    // StartFuncToLocalStorage({ inData: JSON.parse(jVarLocalgetFileData) });
-
+    await jFLocalForOrdersData({ indirHandle: dirHandle });
 };
 
 const jFLocalForItems = async ({ indirHandle }) => {
@@ -38,6 +32,15 @@ const jFLocalForCustomers = async ({ indirHandle }) => {
     let jVarLocalgetFileData = await jVarLocalgetFile.text();
 
     StartFuncCustomers({ inData: JSON.parse(jVarLocalgetFileData) });
+};
+
+const jFLocalForOrdersData = async ({ indirHandle }) => {
+    const ConfigHandle = await indirHandle.getFileHandle('OrdersData.json');
+    let jVarLocalgetFile = await ConfigHandle.getFile();
+
+    let jVarLocalgetFileData = await jVarLocalgetFile.text();
+
+    StartFuncOrdersData({ inData: JSON.parse(jVarLocalgetFileData) });
 };
 
 StartFunc().then();
