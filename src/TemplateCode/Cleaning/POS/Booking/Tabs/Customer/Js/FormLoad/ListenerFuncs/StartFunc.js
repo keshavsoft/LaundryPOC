@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncCreateFolder } from "./CreateFolder/StartFunc.js";
+import { StartFunc as StartFuncCreateFolder } from "./CreateCustomer/StartFunc.js";
 
 let StartFunc = () => {
     StartFuncCreateFolder();

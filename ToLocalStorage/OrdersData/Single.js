@@ -4,6 +4,7 @@ import { StartFunc as StartFuncBulk } from "./Bulk.js";
 const toNumbers = arr => arr.map(Number);
 
 let StartFunc = ({ inEntry }) => {
+    console.log("inEntry : ",inEntry);
     let jVarLocalFromLocalStorage = localStorage.getItem(CommonKeys.Customers);
     let jVarLocalParsed = JSON.parse(jVarLocalFromLocalStorage);
 
