@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncToLocalStorage } from "../../../../../../../../../ToLocalStorage/Items/Single.js";
+import { StartFunc as StartFuncToLocalStorage } from "../../../../../../../../../../../ToLocalStorage/Items/Single.js";
 
 let StartFunc = ({ inBodyData, inProjectName }) => {
     jFToLocalStorage({ inBodyData });
