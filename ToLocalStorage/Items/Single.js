@@ -5,8 +5,7 @@ const toNumbers = arr => arr.map(Number);
 let StartFunc = ({ inEntry }) => {
     let jVarLocalFromLocalStorage = localStorage.getItem(CommonKeys.ItemKey);
     let jVarLocalItemData = JSON.parse(jVarLocalFromLocalStorage);
-    let jVarLocalKeys = Object.keys(jVarLocalItemData)
-        ;
+    let jVarLocalKeys = Object.keys(jVarLocalItemData);
     let jVarLocalNumbers = toNumbers(jVarLocalKeys);
     const max = Math.max(...jVarLocalNumbers);
 
@@ -15,6 +14,8 @@ let StartFunc = ({ inEntry }) => {
     jFLocalPrepareData({ inEntry });
 
     StartFuncBulk({ inData: jVarLocalItemData });
+
+    return { KTF: true };
 };
 
 let jFLocalPrepareData = ({ inEntry }) => {
