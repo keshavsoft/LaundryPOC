@@ -4,6 +4,16 @@ let StartFunc = () => {
     let jVarLocalHtmlId = "BranchNameId";
     let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
     jVarLocalBranchNameId.innerHTML = jFLocalBranchName;
+    jFLocalShowCustomerMobile();
+};
+
+let jFLocalShowCustomerMobile = () => {
+    let jVarLocalHtmlId = "OrderInfoCustomerMobileId";
+
+    let jFLocalBranchName = getUrlQueryParams({ inGetKey: "CustomerMobile" });
+
+    let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
+    jVarLocalBranchNameId.innerHTML = jFLocalBranchName;
     jFLocalShowOrderNumber();
     jFLocalShowCustomerName();
 };
