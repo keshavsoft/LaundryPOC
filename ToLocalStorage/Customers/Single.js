@@ -19,6 +19,8 @@ let StartFunc = ({ inEntry }) => {
     jFLocalPrepareData({ inEntry });
 
     StartFuncBulk({ inData: jVarLocalParsed });
+
+    return { KTF: true };
 };
 
 let jFLocalPrepareData = ({ inEntry }) => {
