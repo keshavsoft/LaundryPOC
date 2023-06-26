@@ -4,26 +4,29 @@ import { StartFunc as StartFuncBulk } from "./Bulk.js";
 const toNumbers = arr => arr.map(Number);
 
 let StartFunc = ({ inEntry }) => {
-    console.log("inEntry : ",inEntry);
-    let jVarLocalFromLocalStorage = localStorage.getItem(CommonKeys.Customers);
+    let jVarLocalFromLocalStorage = localStorage.getItem(CommonKeys.OrdersData);
     let jVarLocalParsed = JSON.parse(jVarLocalFromLocalStorage);
 
-    let jVarLocalItemData = jVarLocalParsed[CommonKeys.CustomersSubKey];
+    let jVarLocalKeys = Object.keys(jVarLocalParsed);
+    let max = 0;
 
-    let jVarLocalKeys = Object.keys(jVarLocalItemData);
-    ;
-    let jVarLocalNumbers = toNumbers(jVarLocalKeys);
-    const max = Math.max(...jVarLocalNumbers);
+    if (jVarLocalKeys.length > 0) {
+        let jVarLocalNumbers = toNumbers(jVarLocalKeys);
 
-    jVarLocalItemData[max + 1] = jFLocalPrepareData({ inEntry });
+        max = Math.max(...jVarLocalNumbers);
+    };
+
+    jVarLocalParsed[max + 1] = jFLocalPrepareData({ inEntry });
 
     jFLocalPrepareData({ inEntry });
 
     StartFuncBulk({ inData: jVarLocalParsed });
+
+    return max + 1;
 };
 
 let jFLocalPrepareData = ({ inEntry }) => {
-    let jVarLocalFromLocalStorage = localStorage.getItem(CommonKeys.Customers);
+    let jVarLocalFromLocalStorage = localStorage.getItem(CommonKeys.OrdersData);
     let jVarLocalItemData = JSON.parse(jVarLocalFromLocalStorage);
     let jVarLocalvalues = Object.values(jVarLocalItemData);
     let jVarLocalPkArray = jVarLocalvalues.map(element => element.pk);

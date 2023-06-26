@@ -11,8 +11,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 </head>
 
@@ -23,19 +21,6 @@
     <main>
         <div class="container">
             <include src="./src/components/Cleaning/POS/Booking/Tabs/OrderInfo.html"></include>
-
-            <!-- <div class="row fs-3">
-                <div class="col">CustomerName</div>
-                <div class="col">CustomerMobile</div>
-                <div class="col" id="BranchNameId">BranchName</div>
-                <div class="col">
-                    <button type="button" class="btn btn-danger fs-4" id="OrderNumberId">OrderNumber</button>
-                </div>
-                <div class="col"> <input class="form-control fs-4" tabindex="-1" type="date"></div>
-                <div class="col">
-                    <button type="button" class="btn btn-warning fs-4" id="CheckOutId">CheckOut</button>
-                </div>
-            </div> -->
 
             <div class="row">
                 <div class="col">
@@ -359,50 +344,6 @@
         </script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script>
-
-        //  <div class="col"><input class="btn btn-primary" type="button" value="Shirt">
-        //                                 </div>
-        const jFLocalItemClick = (event) => {
-            console.log('clicked', event.currentTarget.value);
-        };
-
-        const jFLocalCreateButton = ({ inItemName }) => {
-            let jVarLocalItemName = inItemName;
-
-            const k1 = React.createElement("input", {
-                className: "btn btn-primary",
-                type: "button",
-                value: jVarLocalItemName,
-                onClick: jFLocalItemClick
-            }, null);
-
-            return React.createElement("div", {
-                className: "col"
-            }, k1);
-        };
-
-        const k1 = React.createElement("div", {
-            className: "row"
-        }, jFLocalCreateButton({ inItemName: "Shirt" }),
-            jFLocalCreateButton({ inItemName: "Pant" }));
-
-        let jFLocalCurrentDateTime = () => {
-            let date = new Date();
-
-            let dd = (date.getDate() < 10 ? '0' : '') + date.getDate();
-            let MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
-            let yyyy = date.getFullYear();
-            let HH = date.getHours();
-            let mm = date.getMinutes();
-            let ss = date.getSeconds();
-
-            return `${yyyy}-${MM}-${dd}T${HH}:${mm}:${ss}`;
-        };
-      //  root.render(jFLocalCreateButton({ inItemName: "Shirt" }), jFLocalCreateButton({ inItemName: "Pant" }));
-
-    </script>
 
     <script src="./AddItem.js" type="module"></script>
 </body>
