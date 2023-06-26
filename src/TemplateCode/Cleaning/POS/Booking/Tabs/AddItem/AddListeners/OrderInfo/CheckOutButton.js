@@ -12,10 +12,18 @@ const jFLocalButtonClickFunc = () => {
     let jVarLocalOrderNumberId = document.getElementById("OrderNumberId");
 
     let jVarLocalToLocalStorage = StartFuncPrepareData();
-    
+
     let jVarLocalOrderNumber = StartFuncOrdersData({ inEntry: jVarLocalToLocalStorage });
-    
-    jVarLocalOrderNumberId.innerHTML = jVarLocalOrderNumber;
+
+    if (jVarLocalOrderNumber > 0) {
+        jFLocalAfterSave();
+    };
+};
+
+const jFLocalAfterSave = () => {
+    // window.location = "/Index.html";
+    window.location = "../Settlement/Settlement.html";
+    //  http://127.0.0.1:5500/public/Html/Cleaning/POS/Booking/Tabs/Settlement/Settlement.html
 };
 
 export { StartFunc }
