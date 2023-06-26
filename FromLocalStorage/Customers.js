@@ -3,11 +3,14 @@ import CommonKeys from "../ToLocalStorage/Keys.json" assert { type: "json" };
 const StartFunc = () => {
     let jVarLocalStorageKey = CommonKeys.Customers;
     let jVarLocalStorageSubKey = CommonKeys.CustomersSubKey;
+    let jVarLocalDataNeeded = {};
 
-    let jVarLocalCustomerData = localStorage.getItem(jVarLocalStorageKey);
-    let jVarLocalCustomerDataAsJson = JSON.parse(jVarLocalCustomerData);
+    if (jVarLocalStorageKey in localStorage) {
+        let jVarLocalCustomerData = localStorage.getItem(jVarLocalStorageKey);
+        let jVarLocalCustomerDataAsJson = JSON.parse(jVarLocalCustomerData);
 
-    let jVarLocalDataNeeded = jVarLocalCustomerDataAsJson[jVarLocalStorageSubKey];
+        jVarLocalDataNeeded = jVarLocalCustomerDataAsJson[jVarLocalStorageSubKey];
+    };
 
     return jVarLocalDataNeeded;
 };
