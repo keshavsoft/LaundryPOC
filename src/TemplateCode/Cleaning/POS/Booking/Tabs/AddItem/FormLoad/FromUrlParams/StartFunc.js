@@ -1,10 +1,16 @@
 let StartFunc = () => {
+    jFLocalBranchName();
+    jFLocalShowCustomerMobile();
+    jFLocalShowOrderNumber();
+    jFLocalShowCustomerName();
+};
+
+const jFLocalBranchName = () => {
     let jFLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
 
     let jVarLocalHtmlId = "BranchNameId";
     let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
     jVarLocalBranchNameId.innerHTML = jFLocalBranchName;
-    jFLocalShowCustomerMobile();
 };
 
 let jFLocalShowCustomerMobile = () => {
@@ -14,8 +20,6 @@ let jFLocalShowCustomerMobile = () => {
 
     let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
     jVarLocalBranchNameId.innerHTML = jFLocalBranchName;
-    jFLocalShowOrderNumber();
-    jFLocalShowCustomerName();
 };
 
 let jFLocalShowCustomerName = () => {
