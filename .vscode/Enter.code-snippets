@@ -17,5 +17,66 @@
 			"export { StartFunc };"
 		],
 		"description": "Log output to console"
+	},
+	"Mock Template Function": {
+		"scope": "javascript,typescript",
+		"prefix": "KMock",
+		"body": [
+			"if (CommonMock.AllowMock) {",
+			"if (CommonMock.MockKey === '$1') {",
+			"let LocalMockData = require('./$TM_FILENAME_BASE.json');",
+			"};",
+			"};"
+		],
+		"description": "Log output to console"
+	},
+	"Mock Template Function with Promise Then": {
+		"scope": "javascript,typescript",
+		"prefix": "KMockPromise",
+		"body": [
+			"if (CommonMock.AllowMock) {",
+			"	if (CommonMock.MockKey === '$1') {",
+			"		let LocalMockData = require('./import.json');",
+			"",
+			"		StartFunc({",
+			"			inDataPK: CommonMock.DataPK,",
+			"			...LocalMockData",
+			"		}).then(PromiseData => {",
+			"			console.log('PromiseData : ', PromiseData);",
+			"           $0",
+			"		});",
+			"	};",
+			"};"
+		],
+		"description": "Log output to console"
+	},
+	"Mock Template Function For Html": {
+		"scope": "javascript,typescript",
+		"prefix": "KMockHtml",
+		"body": [
+			"let jFLocal$1 = ({ in$1 }) => {",
+			"	let jVarLocalHtmlId = '$1';",
+			"   let jVarLocal$1 = document.getElementById(jVarLocalHtmlId);",
+			"   jVarLocal$1.innerHTML = in$1;",
+			"};"
+		],
+		"description": "Log output to console"
 	}
+
+
+
+
+
+
+
+
+
+	
+
+    
+ 
+
+ 
+};
+
 }

@@ -4,7 +4,7 @@ import { StartFunc as StartFuncFromUrlParams } from "./FromUrlParams/StartFunc.j
 const StartFunc = () => {
     StartFuncFromUrlParams();
     // StartFuncShowAlerts();
-    StartFuncAddlisteners();
+    // StartFuncAddlisteners();
 };
 
 export { StartFunc };
