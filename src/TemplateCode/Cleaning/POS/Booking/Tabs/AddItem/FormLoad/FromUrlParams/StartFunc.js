@@ -15,6 +15,16 @@ let jFLocalShowCustomerMobile = () => {
     let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
     jVarLocalBranchNameId.innerHTML = jFLocalBranchName;
     jFLocalShowOrderNumber();
+    jFLocalShowCustomerName();
+};
+
+let jFLocalShowCustomerName = () => {
+    let jVarLocalHtmlId = "OrderInfoCustomerNameId";
+
+    let jFLocalBranchName = getUrlQueryParams({ inGetKey: "CustomerName" });
+
+    let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
+    jVarLocalBranchNameId.innerHTML = jFLocalBranchName;
 };
 
 let jFLocalShowOrderNumber = () => {
