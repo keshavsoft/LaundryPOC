@@ -3,10 +3,10 @@ import { StartFunc as StartFuncBulk } from "./Bulk.js";
 const toNumbers = arr => arr.map(Number);
 
 let StartFunc = ({ inEntry }) => {
-    let jVarLocalFromLocalStorage = localStorage.getItem(CommonKeys.Customers);
+    let jVarLocalFromLocalStorage = localStorage.getItem(CommonKeys.ItemKey);
     let jVarLocalItemData = JSON.parse(jVarLocalFromLocalStorage);
     let jVarLocalKeys = Object.keys(jVarLocalItemData)
-    ;
+        ;
     let jVarLocalNumbers = toNumbers(jVarLocalKeys);
     const max = Math.max(...jVarLocalNumbers);
 
@@ -18,8 +18,9 @@ let StartFunc = ({ inEntry }) => {
 };
 
 let jFLocalPrepareData = ({ inEntry }) => {
-    let jVarLocalFromLocalStorage = localStorage.getItem(CommonKeys.Customers);
+    let jVarLocalFromLocalStorage = localStorage.getItem(CommonKeys.ItemKey);
     let jVarLocalItemData = JSON.parse(jVarLocalFromLocalStorage);
+
     let jVarLocalvalues = Object.values(jVarLocalItemData);
     let jVarLocalPkArray = jVarLocalvalues.map(element => element.pk);
     const max = Math.max(...jVarLocalPkArray);
